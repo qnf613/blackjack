@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -I. -Wall -Wextra -Werror -g -pedantic -std=c++11 -fbounds-check -fsanitize=address
+CFLAGS = -I. -Wall -Wextra -Werror -g -pedantic -std=c++11 -fbounds-check
 DEPS = YOUR HEADERS HERE
 OBJ =  main.o
 
