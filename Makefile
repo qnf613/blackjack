@@ -1,14 +1,19 @@
 CC = g++
 CFLAGS = -I. -Wall -Wextra -Werror -g -pedantic -std=c++11 -fbounds-check -O2
-DEPS = YOUR HEADERS HERE
-OBJ =  main.o
+DEPS = utils.h
+OBJ =
+MAIN =  main.o
+TEST = test.o
 
 %.o: %.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-app: $(OBJ)
+app: $(MAIN) $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
+
+apptest: $(TEST) $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
 
 .PHONY: clean
 clean:
-	rm *.o app
+	rm *.o app apptest
