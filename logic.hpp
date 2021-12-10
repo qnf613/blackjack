@@ -1,5 +1,9 @@
 #include <string>
 #include <vector>
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <chrono>
 //class for Card
 struct Card 
 {

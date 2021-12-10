@@ -8,12 +8,14 @@
 static bool failed = false;
 
 template <class T>
-constexpr void assert_equal(const T &expected, const T &testVal) {
+constexpr void assert_equal(const T &expected, const T &testVal) 
+  {
   if (expected != testVal) {
     std::cout << "Result\tError\tExpected: " << expected << " actual "
               << testVal << std::endl;
     failed = true;
-  } else {
+  } 
+  else {
     std::cout << "Result\tOK" << std::endl;
   }
 }

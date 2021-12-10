@@ -1,6 +1,6 @@
 CC = g++
-CFLAGS = -I. -Wall -Wextra -Werror -g -pedantic -std=c++11 -fbounds-check -O2
-DEPS = utils.h
+CFLAGS = -I. -Wall -Wextra -Werror -g -std=c++11 -fbounds-check -O2
+DEPS = utils.h logic.hpp
 OBJ =
 MAIN =  main.o
 TEST = test.o

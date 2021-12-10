@@ -1,8 +1,5 @@
 #include "logic.hpp"
-#include <iostream>
-#include <algorithm>
-#include <random>
-#include <chrono>
+
 //this is where I need to implement ACTUAL blackjack
 
 Card::Card() 
@@ -91,7 +88,7 @@ std::vector<Card> GenerateDeck()
 	for (int i = 0; i < 52; i++) 
 	{
 		auto seed = std::chrono::system_clock::now().time_since_epoch().count();
-	  std::shuffle(newDeck.begin(), newDeck.end(), std::default_random_engine(seed));
+	    std::shuffle(newDeck.begin(), newDeck.end(), std::default_random_engine(seed));
 	}
 	return newDeck;
 }
@@ -112,9 +109,10 @@ int repeatingGame()
 	std::cout << dealer.Hit(&deck) << std::endl;
 	std::cout << dealer.Hit(&deck) << std::endl;
 	std::cout << player.DisplayHand() << std::endl;
-  std::cout << dealer.DisplayHand() << std::endl;
+    std::cout << dealer.DisplayHand() << std::endl;
 
-	//no risky play. (1~10's expected value = 5.5, you don't want to draw more card when u hav 16 or higher)
+	//no risky play. 
+	//(ran btw 1~10's expected value = 5.5, u don't want to draw more card when u hav 16 or higher)
 	while (player.hValues < 15.5)
 	{
 		if(player.hValues == 11)
